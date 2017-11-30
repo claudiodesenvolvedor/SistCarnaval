@@ -12,6 +12,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
     {
         public EnderecoConfig()
         {
+            // Fluent API
             HasKey(e => e.EnderecoId);
 
             Property(e => e.Cep)
@@ -26,7 +27,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
                 .HasMaxLength(10);
 
             Property(p => p.DataCadastro)
-                .IsRequired();
+                .IsRequired(); 
 
             Property(p => p.UsuarioCadastro)
                 .IsRequired()
