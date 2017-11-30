@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\SistemaCarnavalContext.cs" />
+    <Compile Include="EntityConfig\EnderecoConfig.cs" />
     <Compile Include="EntityConfig\PessoaConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -51,7 +51,8 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
                 .IsRequired();
 
             Property(p => p.UsuarioCadastro)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(30);
 
             ToTable("Pessoas");
 
