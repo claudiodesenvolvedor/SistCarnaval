@@ -12,7 +12,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
     {
         public EnderecoConfig()
         {
-            // Fluent API 1
+            // Fluent API 2
             HasKey(e => e.EnderecoId);
 
             Property(e => e.Cep)
