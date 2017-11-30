@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PRJ.SistemaCarnaval.Domain.Entities
 {
@@ -13,6 +14,10 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         public string CodigoBanco { get; set; }
         public string Cnpj { get; set; }
         public string Descricao { get; set; }
+
+        public virtual Candidato CandidatoLista { get; set; }
+        //public virtual ICollection<Candidato> CandidatoLista { get; set; }
+
 
     }
 }
