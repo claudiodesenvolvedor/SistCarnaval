@@ -1,10 +1,5 @@
 ﻿using PRJ.SistemaCarnaval.Domain.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
 {
@@ -31,6 +26,9 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
 
             Property(p => p.UsuarioCadastro)
                 .IsRequired()
+                .HasMaxLength(30);
+
+            Property(p => p.UsuarioAlteracao)
                 .HasMaxLength(30);
 
             ToTable("Enderecos");

@@ -42,6 +42,10 @@ namespace PRJ.SistemaCarnaval.Infra.Data.Context
 
 
             modelBuilder.Configurations.Add(new PessoaConfig());
+            modelBuilder.Configurations.Add(new BancoConfig());
+            modelBuilder.Configurations.Add(new CandidatoConfig());
+            modelBuilder.Configurations.Add(new EnderecoConfig());
+
 
             base.OnModelCreating(modelBuilder);
         }
