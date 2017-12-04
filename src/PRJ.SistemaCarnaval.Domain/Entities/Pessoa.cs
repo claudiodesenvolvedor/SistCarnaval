@@ -12,6 +12,7 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         }
 
         public Guid PessoaId { get; set; }
+        public Nullable<Guid> IndicacaoId { get; set; }
 
         public string Nome { get; set; }
         public string Cpf { get; set; }
@@ -28,11 +29,13 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         public bool Ativo { get; set; }
 
         
-        public virtual Pessoa PessoaLista { get; set; }
+        public virtual Pessoa IndicacaoLista { get; set; }
         public virtual Endereco EnderecoLista { get; set; }
         public virtual Candidato CandidatoLista { get; set; }
 
         public virtual ICollection<Telefone> TelefoneLista { get; set; }
+        public virtual ICollection<Pessoa> IndicacoesListas { get; set; }
+
         
 
     }
