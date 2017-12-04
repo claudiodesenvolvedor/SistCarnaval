@@ -4,6 +4,11 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
 {
     public class ContaBancaria
     {
+        public ContaBancaria()
+        {
+            ContaBancariaId = new Guid();
+        }
+
         public Guid ContaBancariaId { get; set; }   
      
         public int TipoConta { get; set; }
