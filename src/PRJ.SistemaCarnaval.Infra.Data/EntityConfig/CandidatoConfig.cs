@@ -24,15 +24,6 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
                 .HasMaxLength(13)
                 .IsRequired();
 
-            Property(c => c.Conta)
-                .HasMaxLength(12);
-
-            Property(c => c.Agencia)
-                .HasMaxLength(5);
-
-            Property(c => c.Operacao)
-                .HasMaxLength(3);
-
             Property(c => c.DataCadastro)
                 .IsRequired();
 
@@ -45,19 +36,13 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
 
             
             // Relacionamentos
-            //HasRequired(c => c.PessoaLista)
-            //    .WithMany(c => c.CandidatoLista)
-            //    .HasForeignKey(p => p.PessoaId);
 
+            // Relacionamento de um-pra-um entre candidato e banco
             //HasOptional(c => c.BancoLista)
-            //    .WithMany(c => c.CandidatoLista)
-            //    .HasForeignKey(c => c.BancoId);
+            //    .WithRequired(b => b.BancoId);
 
-            HasOptional(c => c.BancoLista)
-                .WithOptionalDependent(c => c.CandidatoLista);
 
-            HasRequired(c => c.PessoaLista)
-                .WithRequiredDependent(c => c.CandidatoLista);
+
 
             ToTable("Candidatos");
 

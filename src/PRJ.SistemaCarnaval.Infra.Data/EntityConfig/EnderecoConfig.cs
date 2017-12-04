@@ -7,7 +7,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
     {
         public EnderecoConfig()
         {
-            // Fluent API 2
+            // Fluent API
             HasKey(e => e.EnderecoId);
 
             Property(e => e.Cep)
@@ -21,15 +21,24 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
             Property(e => e.Complemento)
                 .HasMaxLength(10);
 
-            Property(p => p.DataCadastro)
+            Property(e => e.DataCadastro)
                 .IsRequired(); 
 
-            Property(p => p.UsuarioCadastro)
+            Property(e => e.UsuarioCadastro)
                 .IsRequired()
                 .HasMaxLength(30);
 
-            Property(p => p.UsuarioAlteracao)
+            Property(e => e.UsuarioAlteracao)
                 .HasMaxLength(30);
+
+
+            // Relacionamentos
+
+            // Relacionamento de um-pra-um entre pessoa e endereço
+            //HasOptional(p => p.)
+            //    .WithRequired(e => e.);
+
+
 
             ToTable("Enderecos");
 

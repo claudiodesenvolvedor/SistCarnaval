@@ -10,7 +10,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
         public PessoaConfig()
         {
             HasKey(p => p.PessoaId);
-            // HasKey(p => new { p.PessoaId, cpf });
+            // HasKey(p => new { p.PessoaId, cpf }); // Chave composta
 
             Property(p => p.Nome)
                 .HasMaxLength(50)
@@ -58,7 +58,25 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
                 .HasMaxLength(30);
 
 
+            // Relacionamentos
 
+            // Relacionamento de um-pra-zero ou um entre pessoa e endereço
+            HasOptional(p => p.EnderecoLista)
+                .WithRequired(e => e.PessoaLista);
+
+            // Relacionamento de um-pra-zero ou um entre pessoa e pessoa
+            HasOptional(p => p.PessoaLista)
+                .WithRequired(p => p.PessoaLista);
+
+            // Relacionamento de um-pra-zero ou um entre pessoa e candidato
+            HasOptional(p => p.CandidatoLista)
+                .WithRequired(c => c.PessoaLista);
+
+            // Relacionamento de um-pra-zero ou muitos entre pessoa e telefone
+            HasMany<Telefone>(p => p.TelefoneLista)
+                .WithRequired(t => t.PessoaLista)
+                .HasForeignKey(t => t.PessoaId);
+            
 
             ToTable("Pessoas");
 

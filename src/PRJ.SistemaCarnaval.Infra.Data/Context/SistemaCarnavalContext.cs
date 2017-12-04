@@ -15,6 +15,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.Context
 
         public DbSet<Banco> Bancos { get; set; }
         public DbSet<Candidato> Candidatos { get; set; }
+        public DbSet<ContaBancaria> ContasBancarias { get; set; }
         public DbSet<Coordenador> Coordenadores { get; set; }
         public DbSet<Credenciado> Credenciados { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
@@ -41,10 +42,11 @@ namespace PRJ.SistemaCarnaval.Infra.Data.Context
                 .Configure(p => p.HasMaxLength(100));
 
 
-            modelBuilder.Configurations.Add(new PessoaConfig());
             modelBuilder.Configurations.Add(new BancoConfig());
             modelBuilder.Configurations.Add(new CandidatoConfig());
+            modelBuilder.Configurations.Add(new ContaBancariaConfig());
             modelBuilder.Configurations.Add(new EnderecoConfig());
+            modelBuilder.Configurations.Add(new PessoaConfig());
 
 
             base.OnModelCreating(modelBuilder);

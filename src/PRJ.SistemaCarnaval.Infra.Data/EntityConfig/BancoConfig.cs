@@ -9,7 +9,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
         {
             HasKey(b => b.BancoId);
 
-            Property(b => b.CodigoBanco)
+            Property(b => b.NumeroBanco)
                 .IsRequired()
                 .HasMaxLength(3)
                 .IsFixedLength();
@@ -17,7 +17,7 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
             Property(b => b.Cnpj)
                 .HasMaxLength(18);
 
-            Property(b => b.Descricao)
+            Property(b => b.DescricaoBanco)
                 .IsRequired()
                 .HasMaxLength(70);
 
