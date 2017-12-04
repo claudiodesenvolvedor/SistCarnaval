@@ -12,8 +12,6 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         }
 
         public Guid PessoaId { get; set; }
-        public Guid PessoaIndicacaoId { get; set; }
-        public Guid EnderecoId { get; set; }
 
         public string Nome { get; set; }
         public string Cpf { get; set; }
@@ -32,9 +30,10 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         
         public virtual Pessoa PessoaLista { get; set; }
         public virtual Endereco EnderecoLista { get; set; }
+        public virtual Candidato CandidatoLista { get; set; }
 
         public virtual ICollection<Telefone> TelefoneLista { get; set; }
-        public virtual Candidato CandidatoLista { get; set; }
+        
 
     }
 }

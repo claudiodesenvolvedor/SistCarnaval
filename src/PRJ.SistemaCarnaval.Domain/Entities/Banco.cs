@@ -11,10 +11,10 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         }
 
         public Guid BancoId { get; set; }
-        public string CodigoBanco { get; set; }
+        public string NumeroBanco { get; set; }
         public string Cnpj { get; set; }
-        public string Descricao { get; set; }
-
+        public string DescricaoBanco { get; set; }
+        
         public virtual Candidato CandidatoLista { get; set; }
         //public virtual ICollection<Candidato> CandidatoLista { get; set; }
 

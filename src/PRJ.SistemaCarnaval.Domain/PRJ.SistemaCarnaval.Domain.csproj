@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="Entities\Banco.cs" />
     <Compile Include="Entities\Candidato.cs" />
+    <Compile Include="Entities\ContaBancaria.cs" />
     <Compile Include="Entities\Coordenador.cs" />
     <Compile Include="Entities\Credenciado.cs" />
     <Compile Include="Entities\Endereco.cs" />

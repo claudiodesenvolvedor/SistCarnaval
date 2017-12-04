@@ -10,17 +10,17 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         }
 
         public Guid CandidatoId { get; set; }
-        public Guid PessoaId { get; set; }
-        public Guid BancoId { get; set; }
+        //public Guid PessoaId { get; set; }
+        //public Guid BancoId { get; set; }
 
         public string Pis { get; set; }
         public string Email { get; set; }
         public string CienteSelecao { get; set; }
         public string ReciboRiotur { get; set; }
-        public int? CodigoTipoConta { get; set; }
-        public string Agencia { get; set; }
-        public string Operacao { get; set; }
-        public string Conta { get; set; }
+        //public Nullable<int> TipoConta { get; set; }
+        //public string Agencia { get; set; }
+        //public string Operacao { get; set; }
+        //public string Conta { get; set; }
 
         public string UsuarioCadastro { get; set; }
         public DateTime DataCadastro { get; set; }
@@ -29,6 +29,7 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
 
         public virtual Pessoa PessoaLista { get; set; }
         public virtual Banco BancoLista { get; set; }
+        public virtual ContaBancaria ContaBancariaLista { get; set; }
 
     }
 }

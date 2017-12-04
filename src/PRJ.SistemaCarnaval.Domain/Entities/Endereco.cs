@@ -10,6 +10,8 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         }
 
         public Guid EnderecoId { get; set; }
+        //public Guid PessoaId { get; set; }
+
         public string Cep { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
@@ -19,7 +21,7 @@ namespace PRJ.SistemaCarnaval.Domain.Entities
         public string UsuarioAlteracao { get; set; }
         public DateTime DataAlteracao { get; set; }
 
-        //public virtual Pessoa Pessoa { get; set; }
+        public virtual Pessoa PessoaLista { get; set; }
 
     }
 }
