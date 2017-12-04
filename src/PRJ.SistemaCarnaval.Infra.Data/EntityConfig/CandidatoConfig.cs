@@ -31,17 +31,19 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
                 .IsRequired()
                 .HasMaxLength(30);
 
-            Property(p => p.UsuarioAlteracao)
+            Property(c => c.UsuarioAlteracao)
                 .HasMaxLength(30);
 
             
-            // Relacionamentos
+            // Relacionamentos ---------------------------------------------
 
-            // Relacionamento de um-pra-um entre candidato e banco
-            //HasOptional(c => c.BancoLista)
-            //    .WithRequired(b => b.BancoId);
+            // Relacionamento de um-pra-zero ou um entre pessoa e endereço
+            HasOptional(c => c.BancoLista)
+                .WithRequired(b => b.CandidatoLista);
 
-
+            // Relacionamento de um-pra-zero ou um entre pessoa e endereço
+            HasOptional(c => c.ContaBancariaLista)
+                .WithRequired(b => b.CandidatoLista);
 
 
             ToTable("Candidatos");

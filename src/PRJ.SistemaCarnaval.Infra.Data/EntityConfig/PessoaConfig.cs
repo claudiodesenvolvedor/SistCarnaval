@@ -57,16 +57,21 @@ namespace PRJ.SistemaCarnaval.Infra.Data.EntityConfig
             Property(p => p.UsuarioAlteracao)
                 .HasMaxLength(30);
 
+            Property(p => p.IndicacaoId)
+                .IsOptional();
 
-            // Relacionamentos
+
+            // Relacionamentos ---------------------------------------------
 
             // Relacionamento de um-pra-zero ou um entre pessoa e endereço
             HasOptional(p => p.EnderecoLista)
                 .WithRequired(e => e.PessoaLista);
 
             // Relacionamento de um-pra-zero ou um entre pessoa e pessoa
-            HasOptional(p => p.PessoaLista)
-                .WithRequired(p => p.PessoaLista);
+            HasOptional(p => p.IndicacaoLista)
+                .WithMany(p => p.IndicacoesListas)
+                .HasForeignKey(p => p.IndicacaoId);
+            
 
             // Relacionamento de um-pra-zero ou um entre pessoa e candidato
             HasOptional(p => p.CandidatoLista)
